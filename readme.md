@@ -3,19 +3,10 @@
 ## Table of Contents
 1. [Introduction](#1-introduction)
    - [Technologies used](#technologies-used)
-3. [Implementation Overview](#2-implementation-overview)
-4. [Design](#3-design)
-5. [Project structure](#4-project-structure)
-6. [Settings](#5-settings)
-   - [Prerequisites](#prerequisites)
-   - [Important note : You must specify AWS credentials for each of the following](#important-note)
-   - [AWS Infrastructure](#aws-infrastructure)
-   - [Docker](#docker)
-   - [Running](#running)
-7. [Implementation](#6-implementation)
-   - [Load Sales Data into PostgreSQL Database](#61-load-sales-data-into-postgresql-database)
-   - [Load Data from PostgreSQL to Amazon Redshift](#62-load-data-from-postgresql-to-amazon-redshift)
-8. [Visualize Result](#7-visualize-result)
+2. [Implementation Overview](#2-implementation-overview)
+3. [Design](#3-design)
+4. [Project structure](#4-project-structure)
+5. [Visualize Result](#7-visualize-result)
 
 
 ## 1. Introduction 
