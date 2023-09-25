@@ -116,12 +116,7 @@ ETL/
 
 <br> <br>
   
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/Profit%20by%20state.png alt="Profit by state.png" height="500">
-  <p style="text-align: center;"> <b> <i> Profit by state </i> </b> </p>
-</div>
 
-<br> <br>
 
 
   
