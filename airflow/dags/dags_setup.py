@@ -5,14 +5,14 @@ from airflow import DAG
 from datetime import datetime, timedelta 
 
 from ETL_redshift.ETL_psql_s3 import ETL_s3
-from ETL_redshift.Load_s3_to_redshift import Create_redshift_schema, Load_s3_to_redshift
-from ETL_psql.Extract.Extract import Extract_from_source
-from ETL_psql.Transform.Transform_customers import Transform_customers
-from ETL_psql.Transform.Transform_locations import Transform_locations
-from ETL_psql.Transform.Transform_shipments import Transform_shipments
-from ETL_psql.Transform.Transform_products import Transform_products
-from ETL_psql.Transform.Transfrom_sales import Transform_sales
-from ETL_psql.Load.Load_psql import Load_schema
+from ETL_redshift.Load_s3_to_redshift import create_redshift_schema, load_s3_to_redshift
+from ETL_psql.Extract.Extract import extract_from_source
+from ETL_psql.Transform.Transform_customers import transform_customers
+from ETL_psql.Transform.Transform_locations import transform_locations
+from ETL_psql.Transform.Transform_shipments import transform_shipments
+from ETL_psql.Transform.Transform_products import transform_products
+from ETL_psql.Transform.Transfrom_sales import transform_sales
+from ETL_psql.Load.Load_psql import load_schema
 
 default_args = {
     'owner' : 'fancol',
@@ -37,46 +37,46 @@ with DAG (
 
     Extract_from_source = PythonOperator(
         task_id = 'Extract_from_source',
-        python_callable = Extract_from_source
+        python_callable = extract_from_source
     )
 
     Transform_products = PythonOperator(
         task_id = "Transform_product_df",
-        python_callable = Transform_products,
+        python_callable = transform_products,
         op_kwargs = {"Name" : "products", "filePath" : "products.csv"}
     )
 
     
     Transform_locations = PythonOperator(
         task_id = "Transform_location_df",
-        python_callable = Transform_locations,
+        python_callable = transform_locations,
         op_kwargs = {"Name" : "locations", "filePath" : ""}
     )
 
     
     Transform_customers = PythonOperator(
         task_id = "Transform_customer_df",
-        python_callable = Transform_customers,
+        python_callable = transform_customers,
         op_kwargs = {"Name" : "customers", "filePath" : "customers.csv"}
     )
 
     
     Transform_sales = PythonOperator(
         task_id = "Transform_sale_df",
-        python_callable = Transform_sales,
+        python_callable = transform_sales,
         op_kwargs = {"Name" : "sales", "filePath" : "sales.csv"}
     )
 
     
     Transform_shipments = PythonOperator(
         task_id = "Transform_shipment_df",
-        python_callable = Transform_shipments,
+        python_callable = transform_shipments,
         op_kwargs = {"Name" : "shipments", "filePath" : "shipments.csv"}
     )
 
     Load_psql = PythonOperator(
         task_id = "Load_to_psql",
-        python_callable = Load_schema
+        python_callable = load_schema
     )
 
     ETL_s3 = PythonOperator(
@@ -86,13 +86,13 @@ with DAG (
     
     Create_redshift_schema = PythonOperator(
         task_id = "Create_redshift_schema",
-        python_callable = Create_redshift_schema,
+        python_callable = create_redshift_schema,
         op_kwargs = {"root_dir" : "/opt/airflow/redshift_setup"}  
     )
 
     Load_s3_redshift = PythonOperator(
         task_id = "Load_s3_redshift",
-        python_callable = Load_s3_to_redshift
+        python_callable = load_s3_to_redshift
     )
 
    
