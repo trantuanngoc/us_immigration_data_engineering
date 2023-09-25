@@ -99,12 +99,6 @@ Batch-Processing/
 
 ## 5. Visualize result
 
-Connect redshift to metabase and visualize results
-
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/metabase.png alt="connect_metabase" height="500">
-  <p style="text-align: center;"> <b> <i> Connect to metabase </i> </b> </p>
-</div>
 
 ### Results
 
