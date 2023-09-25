@@ -52,7 +52,7 @@ Design data models for OLTP database (PostgreSQL) and data warehouse (Amazon Red
 
 ```bash
 
-Batch-Processing/
+ETL/
   ├── airflow/
   │   ├── dags/
   │   │   ├── dags_setup.py
@@ -123,9 +123,6 @@ Batch-Processing/
 
 <br> <br>
 
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/Shipping%20orders%20by%20company.png alt="Shipping orders by company" height="500">
-  <p style="text-align: center;"> <b> <i> Shipping orders by company </i> </b> </p>
-</div>
+
   
 
