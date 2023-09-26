@@ -10,7 +10,6 @@ def extract_from_source():
     s3 = session.client("s3")
     bucket_name = "amazon-us-sales-bucket"
 
-    # List all objects in bucket
     response = s3.list_objects_v2(Bucket=bucket_name)
 
     write_dir = "/opt/airflow/Input_data"

@@ -15,7 +15,6 @@ class TransformSaleDf:
 
         self.prod_arr = sorted(prod_arr, key=lambda x: x[0])
         self.n = len(self.df)
-
         self.product = list(self.df['Product ID'])
         self.quantity = list(self.df['Quantity'])
 
@@ -42,6 +41,5 @@ class TransformSaleDf:
 
         self.df['Total cost'] = [val[0] * self.quantity[i]
                                  for i, val in enumerate(revenue_arr)]
-
         self.df['Profit'] = [(val[0] * val[1] / 100) * self.quantity[i]
                              for i, val in enumerate(revenue_arr)]

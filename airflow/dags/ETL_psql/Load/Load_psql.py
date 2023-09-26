@@ -20,7 +20,6 @@ def load_table(table_name, df, cur):
 
         
 def load_schema() :
-    # parameters for connecting to postgreSQL database
     connect_params = {
         "host": "postgres",
         "port": 5432,

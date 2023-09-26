@@ -20,8 +20,6 @@ def setup_psql_connection():
     return conn
 
 
-# ----------------------------------- Extract -----------------------------------
-
 def extract_from_postgre_sql(df_dict):
     conn = setup_psql_connection()
     cur = conn.cursor()
@@ -53,7 +51,6 @@ def extract_from_postgre_sql(df_dict):
     conn.close()
 
 
-# ----------------------------------- Transform -----------------------------------
 
 def generate_date():
     start_date = datetime(2021, 1, 1)
@@ -72,7 +69,7 @@ def generate_date():
         time_dict['month'].append(date.month)
         time_dict['year'].append(date.year)
 
-    return time_dict;
+    return time_dict
 
 
 def joining_df(df_1, df_2, left, right):
@@ -104,7 +101,7 @@ def transform(df_dict):
                                          'product_id', 'customer_id', 'shipping_zipcode', 'order_date', 'shipment_id']];
 
 
-# ----------------------------------- Load -----------------------------------
+
 
 def load_df_s3(s3, bucket_name, df, key):
     csv_buffer = BytesIO()
@@ -137,7 +134,6 @@ def load_s3(df_dict):
         print("Load successfully \n")
 
 
-# ----------------------------------- ETL -----------------------------------
 def ETL_s3():
     pd.set_option('display.max_columns', None)
     df_dict = {}

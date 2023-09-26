@@ -15,7 +15,6 @@ class TransformDf:
             self.df = pd.DataFrame()
 
         self.name = name
-
         self.clean()
         self.extra_var()
         self.transform()
