@@ -16,7 +16,6 @@ def load_table(table_name, df, cur):
 
         cur.executemany(query, records);
 
-        print(f"Successfully insert data to table {table_name}");        
 
         
 def load_schema() :
