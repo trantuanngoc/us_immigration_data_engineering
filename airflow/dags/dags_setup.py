@@ -4,15 +4,15 @@ from airflow import DAG
 
 from datetime import datetime, timedelta 
 
-from ETL_redshift.ETL_psql_s3 import ETL_s3
-from ETL_redshift.Load_s3_to_redshift import create_redshift_schema, load_s3_to_redshift
+from ETL_redshift.ETLPsqlS3 import ETL_s3
+from ETL_redshift.LoadS3ToRedshift import create_redshift_schema, load_s3_to_redshift
 from ETL_psql.Extract.Extract import extract_from_source
-from ETL_psql.Transform.Transform_customers import transform_customers
-from ETL_psql.Transform.Transform_locations import transform_locations
-from ETL_psql.Transform.Transform_shipments import transform_shipments
-from ETL_psql.Transform.Transform_products import transform_products
-from ETL_psql.Transform.Transfrom_sales import transform_sales
-from ETL_psql.Load.Load_psql import load_schema
+from ETL_psql.Transform.TransformCustomers import transform_customers
+from ETL_psql.Transform.TransformLocations import transform_locations
+from ETL_psql.Transform.TransformShipments import transform_shipments
+from ETL_psql.Transform.TransformProducts import transform_products
+from ETL_psql.Transform.TransfromSales import transform_sales
+from ETL_psql.Load.LoadPsql import load_schema
 
 default_args = {
     'owner' : 'fancol',

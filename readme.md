@@ -60,18 +60,18 @@ ETL/
   │   │   │   ├── Extract
   │   │   │   │   └── Extract.py
   │   │   │   ├── Load/
-  │   │   │   │   └── Load_psql.py
+  │   │   │   │   └── LoadPsql.py
   │   │   │   └── Transform
-  │   │   │       ├── Rename_col_df.py
+  │   │   │       ├── RenameColDf.py
   │   │   │       ├── Transform.py
-  │   │   │       ├── Transform_customers.py
-  │   │   │       ├── Transform_locations.py
-  │   │   │       ├── Transform_products.py
-  │   │   │       ├── Transform_shipments.py
-  │   │   │       └── Transfrom_sales.py
+  │   │   │       ├── TransformCustomers.py
+  │   │   │       ├── TransformLocations.py
+  │   │   │       ├── TransformProducts.py
+  │   │   │       ├── TransformShipments.py
+  │   │   │       └── TransfromSales.py
   │   │   └── ETL_redshift
-  │   │       ├── ETL_psql_s3.py
-  │   │       └── Load_s3_to_redshift.py
+  │   │       ├── ETLPsqlS3.py
+  │   │       └── LoadS3ToRedshift.py
   │   └── logs
   ├── postgreSQL_setup
   │   └── create_pgsql_schema.sql
