@@ -33,7 +33,7 @@ def load_schema() :
     
     
     table_order = ['locations', 'customers', 'products', 'sales', 'shipments']
-    root_dir = "/opt/airflow/Transformed_data";
+    root_dir = "/opt/airflow/transformed_data";
     for table in table_order:
         filePath = os.path.join(root_dir, table + ".csv");
         while(os.path.isfile(filePath) != True):

@@ -5,8 +5,8 @@ from ETL_psql.Transform.Rename_col_df import column_dict
 
 class TransformDf:
     def __init__(self, name, filePath=""):
-        self.root_dir = "/opt/airflow/Input_data"
-        self.write_dir = "/opt/airflow/Transformed_data"
+        self.root_dir = "/opt/airflow/input_data"
+        self.write_dir = "/opt/airflow/transformed_data"
 
         try:
             path = os.path.join(self.root_dir, filePath)

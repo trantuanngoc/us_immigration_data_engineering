@@ -12,7 +12,7 @@ def extract_from_source():
 
     response = s3.list_objects_v2(Bucket=bucket_name)
 
-    write_dir = "/opt/airflow/Input_data"
+    write_dir = "/opt/airflow/input_data"
     for obj in response['Contents']:
         key = obj['Key']
 

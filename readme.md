@@ -84,8 +84,8 @@ ETL/
   ├── Implementation detail.md
   ├── assets
   │   └── Many images.png
-  ├── Input_data
-  ├── Transformed_data
+  ├── input_data
+  ├── transformed_data
   ├── Makefile
   ├── terraform
   │   ├── main.tf
