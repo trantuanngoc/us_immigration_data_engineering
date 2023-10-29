@@ -29,14 +29,14 @@ Design a data warehouse (Amazon Redshift). Build ETL pipelines to transform raw 
 ## 3. Design 
 
 <div style="display: flex; flex-direction: column;">
-  <img src=assets/Star%20schema.png alt="Star schema" width="600" height="500">
+  <img src=assets/star_schema.png alt="Star schema" width="600" height="500">
   <p style="text-align: center;"> <b> <i> Data model (star schema) for Redshift </i> </b> </p>
 </div>
 
 <br> <br>
 
 <div style="display: flex; flex-direction: column;">
-  <img src=assets/Airflow_workflow.png alt="Star schema" width="900" height="500">
+  <img src=assets/airflow_workflow.png alt="Star schema" width="900" height="500">
   <p style="text-align: center;"> <b> <i> Airflow workflow </i> </b> </p>
 </div>
 
@@ -44,14 +44,14 @@ Design a data warehouse (Amazon Redshift). Build ETL pipelines to transform raw 
 ## 4. Visualize result
 
 <div style="display: flex; flex-direction: column;">
-  <img src=assets/Revenue%20by%20month.png alt="Revenue by month" height="500">
+  <img src=assets/revenue_by_month.png alt="Revenue by month" height="500">
   <p style="text-align: center;"> <b> <i> Revenue by month in 2022 </i> </b> </p>
 </div>
 
 <br> <br>
   
 <div style="display: flex; flex-direction: column;">
-  <img src=assets/Brand%20popularity.png alt="Brand popularity.png" height="500">
+  <img src=assets/brand_popularity.png alt="Brand popularity" height="500">
   <p style="text-align: center;"> <b> <i> Brand popularity </i> </b> </p>
 </div>
 
