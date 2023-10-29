@@ -1,36 +1,36 @@
 # Batch Processing : ETL pipeline, data modelling and warehousing of Sales data
 
-
-
 ## Table of Contents
-1. [Introduction](#1-introduction)
-2. [Implementation Overview](#2-implementation-overview)
-3. [Design](#3-design)
-4. [Visualize Result](#4-visualize-result)
+1. [Data](#1-data)
+2. [Tech stack](#2-tech-stackk)
+2. [Work flow](#3-work-flow)
+3. [Design](#4-design)
+4. [Result Visualization](#5-result-visualization)
 
 
-## 1. Introduction 
-Data is collected from an e-commerce company about their sales in 2022, the company's analytic teams is interested in understanding their business situation in the last year. We will build ETL pipelines which will transform raw data into actionable insights, store them in OLTP database (PostgreSQL) and OLAP database (Amazon Redshift) for enhanced data analytics capabilities.
+## 1. Data
+Data is collected from an e-commerce company about their sales in 2022, the company's analytic teams is interested in understanding their business situation in the last year.
 
 Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> </b>
 
-### Tech Stack
+## 2. Tech Stack
 - Python
 - Airflow
+- Spark
+- AWS services : S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster)
 - Terraform 
-- AWS services : S3 (Data Lake), Redshift (data warehouse), EMR (Spark Cluster)
 - Docker
 
-## 2. Implementation overview 
-Design a data warehouse (Amazon Redshift). Build ETL pipelines to transform raw data into actionable insights using aws service.
+## 3. Work flow 
+Design a data warehouse(Amazon Redshift). Build ETL pipelines to transform raw data into actionable insights using aws service.
 
 <img src = assets/work_flow.png alt = "Airflow conceptual view">
 
-## 3. Design 
+## 4. Design 
 
 <div style="display: flex; flex-direction: column;">
-  <img src=assets/star_schema.png alt="Star schema" width="600" height="500">
-  <p style="text-align: center;"> <b> <i> Data model (star schema) for Redshift </i> </b> </p>
+  <img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
+  <p style="text-align: center;"> <b> <i> Data model (star schema) for Data warehouse </i> </b> </p>
 </div>
 
 <br> <br>
@@ -41,7 +41,7 @@ Design a data warehouse (Amazon Redshift). Build ETL pipelines to transform raw 
 </div>
 
 
-## 4. Visualize result
+## 5. Result visulization
 
 <div style="display: flex; flex-direction: column;">
   <img src=assets/revenue_by_month.png alt="Revenue by month" height="500">
