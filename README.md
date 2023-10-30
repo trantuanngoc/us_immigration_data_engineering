@@ -17,7 +17,7 @@ Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> <
  Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
 ## 3. Work flow 
-<img src = assets/work_flow.png alt = "Airflow conceptual view" width="600" height="500">
+<img src = assets/work_flow.png alt = "Airflow conceptual view" width="600">
 
 ## 4. Design 
 
