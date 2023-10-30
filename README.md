@@ -27,7 +27,7 @@ Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> <
 - Airflow workflow:
 <img src=assets/airflow_workflow.png alt="Star schema" width="600">
  
-## 5. Result visulization
+## 5. Result visualization
 - Revenue by month:
 <img src=assets/revenue_by_month.png alt="Revenue by month" width="600">
 
