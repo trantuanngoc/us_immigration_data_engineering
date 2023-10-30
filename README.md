@@ -17,18 +17,13 @@ Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> <
  Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
 ## 3. Work flow 
-<img src = assets/work_flow.png alt = "Airflow conceptual view">
-
-![alt](assets/work_flow.png)
+<img src = assets/work_flow.png alt = "Airflow conceptual view" width="600" height="500">
 
 ## 4. Design 
 
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
-  <p style="text-align: center;"> <b> <i> Data model (star schema) for Data warehouse </i> </b> </p>
-</div>
 
-![alt Data model for data warehouse](assets/datawarehouse_design.png)
+<img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
+
 
 <br> <br>
 
@@ -44,8 +39,6 @@ Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> <
   <img src=assets/revenue_by_month.png alt="Revenue by month" height="500">
   <p style="text-align: center;"> <b> <i> Revenue by month in 2022 </i> </b> </p>
 </div>
-
-
 
 <br> <br>
   
