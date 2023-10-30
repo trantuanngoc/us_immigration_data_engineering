@@ -20,34 +20,21 @@ Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> <
 <img src = assets/work_flow.png alt = "Airflow conceptual view" width="600">
 
 ## 4. Design 
-
-
+- Data model (star schema) for data warehouse:
 <img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
 
-
 <br> <br>
-
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/airflow_workflow.png alt="Star schema" width="900" height="500">
-  <p style="text-align: center;"> <b> <i> Airflow workflow </i> </b> </p>
-</div>
-
-
+- Airflow workflow:
+<img src=assets/airflow_workflow.png alt="Star schema" width="600">
+ 
 ## 5. Result visulization
-
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/revenue_by_month.png alt="Revenue by month" height="500">
-  <p style="text-align: center;"> <b> <i> Revenue by month in 2022 </i> </b> </p>
-</div>
+- Revenue by month:
+<img src=assets/revenue_by_month.png alt="Revenue by month" width="600">
 
 <br> <br>
+- Brand popularity:
+<img src=assets/brand_popularity.png alt="Brand popularity" width="600">
   
-<div style="display: flex; flex-direction: column;">
-  <img src=assets/brand_popularity.png alt="Brand popularity" height="500">
-  <p style="text-align: center;"> <b> <i> Brand popularity </i> </b> </p>
-</div>
-
-<br> <br>
   
 
 
