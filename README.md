@@ -14,7 +14,7 @@ Data is collected from an e-commerce company about their sales in 2022, the comp
 Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> </b>
 
 ## 2. Tech Stack
- Python, Airflow, Spark, AWS services : S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
+ Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
 ## 3. Work flow 
 Design a data warehouse(Amazon Redshift). Build ETL pipelines to transform raw data into actionable insights using aws service.
