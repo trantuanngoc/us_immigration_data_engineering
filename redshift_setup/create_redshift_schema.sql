@@ -1,75 +1,75 @@
-DROP SCHEMA IF EXISTS warehouse_sales CASCADE;
+DROP SCHEMA IF EXISTS sale_warehouse CASCADE;
 
-CREATE SCHEMA warehouse_sales;
+CREATE SCHEMA sale_warehouse;
 
-CREATE TABLE warehouse_sales.Sales (
-    Sale_ID VARCHAR(255) PRIMARY KEY,
-    Revenue DECIMAL(10, 3),
-    Profit DECIMAL(10, 3),
-    Quantity INT,
-    Shipping_cost DECIMAL(10, 3),
+CREATE TABLE sale_warehouse.sale (
+    sale_id VARCHAR(255) PRIMARY KEY,
+    revenue DECIMAL(10, 3),
+    profit DECIMAL(10, 3),
+    quantity INT,
+    shipping_cost DECIMAL(10, 3),
 
-    Product_ID BIGINT,
-    Customer_ID VARCHAR(255),
-    Shipping_zipcode INT,
-    Order_date DATE,
-    Shipment_ID VARCHAR(255)
+    product_id BIGINT,
+    customer_id VARCHAR(255),
+    shipping_zipcode INT,
+    order_date DATE,
+    shipment_id VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS warehouse_sales.Products (
-    Product_ID BIGINT PRIMARY KEY,
-    Product_name VARCHAR(255),
-    SKU INT,
-    Brand VARCHAR(255),
-    Category VARCHAR(255),
-    Product_size DECIMAL
+CREATE TABLE IF NOT EXISTS sale_warehouse.product (
+    product_id BIGINT PRIMARY KEY,
+    product_name VARCHAR(255),
+    sku INT,
+    brand VARCHAR(255),
+    category VARCHAR(255),
+    product_size DECIMAL
 );
 
-CREATE TABLE IF NOT EXISTS warehouse_sales.Shipments (
-    Shipment_ID VARCHAR(255) PRIMARY KEY,
-    Shipping_mode VARCHAR(255),
-    Shipping_status VARCHAR(255),
-    Shipping_company VARCHAR(255)
+CREATE TABLE IF NOT EXISTS sale_warehouse.shipment (
+    shipment_id VARCHAR(255) PRIMARY KEY,
+    shipping_mode VARCHAR(255),
+    shipping_status VARCHAR(255),
+    shipping_company VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS warehouse_sales.Customers (
-    Customer_ID VARCHAR(255) PRIMARY KEY,
-    Name VARCHAR(255),
-    Phone VARCHAR(255),
-    Age INT
+CREATE TABLE IF NOT EXISTS sale_warehouse.customer (
+    customer_id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255),
+    phone VARCHAR(255),
+    age INT
 );
 
-CREATE TABLE IF NOT EXISTS warehouse_sales.Locations (
-    Shipping_zipcode INT PRIMARY KEY,
-    City VARCHAR(45),
-    State VARCHAR(45),
-    Country VARCHAR(45),
-    Shipping_address VARCHAR(255)
+CREATE TABLE IF NOT EXISTS sale_warehouse.location (
+    shipping_zipcode INT PRIMARY KEY,
+    city VARCHAR(45),
+    state VARCHAR(45),
+    country VARCHAR(45),
+    shipping_address VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS warehouse_sales.Time (
-    Full_date Date PRIMARY KEY,
-    Day INT,
-    Month INT,
-    Year INT
+CREATE TABLE IF NOT EXISTS sale_warehouse.time (
+    date_id Date PRIMARY KEY,
+    day INT,
+    month INT,
+    year INT
 );
 
-ALTER TABLE warehouse_sales.Sales 
-ADD CONSTRAINT fk_sale_product_prodID FOREIGN KEY (Product_ID)
-REFERENCES warehouse_sales.Products (Product_ID);
+ALTER TABLE sale_warehouse.sale 
+ADD CONSTRAINT fk_sale_product_prodID FOREIGN KEY (product_id)
+REFERENCES sale_warehouse.product (product_id);
 
-ALTER TABLE warehouse_sales.Sales 
-ADD CONSTRAINT fk_sale_customer_custID FOREIGN KEY (Customer_ID)
-REFERENCES warehouse_sales.Customers (Customer_ID);
+ALTER TABLE sale_warehouse.sale 
+ADD CONSTRAINT fk_sale_customer_custID FOREIGN KEY (customer_id)
+REFERENCES sale_warehouse.customer (customer_id);
 
-ALTER TABLE warehouse_sales.Sales 
-ADD CONSTRAINT fk_sale_customer_shipmentID FOREIGN KEY (Shipment_ID)
-REFERENCES warehouse_sales.Shipments (Shipment_ID);
+ALTER TABLE sale_warehouse.sale 
+ADD CONSTRAINT fk_sale_customer_shipmentID FOREIGN KEY (shipment_id)
+REFERENCES sale_warehouse.shipment (shipment_id);
 
-ALTER TABLE warehouse_sales.Sales 
-ADD CONSTRAINT fk_sale_customer_zipcode FOREIGN KEY (Shipping_zipcode)
-REFERENCES warehouse_sales.Locations (Shipping_zipcode);
+ALTER TABLE sale_warehouse.sale 
+ADD CONSTRAINT fk_sale_customer_zipcode FOREIGN KEY (shipping_zipcode)
+REFERENCES sale_warehouse.location (shipping_zipcode);
 
-ALTER TABLE warehouse_sales.Sales 
-ADD CONSTRAINT fk_sale_customer_timeID FOREIGN KEY (Order_date)
-REFERENCES warehouse_sales.Time (Full_date);
+ALTER TABLE sale_warehouse.sale 
+ADD CONSTRAINT fk_sale_customer_timeID FOREIGN KEY (order_date)
+REFERENCES sale_warehouse.time (date_id);
