@@ -1,75 +1,79 @@
-DROP SCHEMA IF EXISTS sale_warehouse CASCADE;
-
-CREATE SCHEMA sale_warehouse;
-
-CREATE TABLE sale_warehouse.sale (
-    sale_id VARCHAR(255) PRIMARY KEY,
-    revenue DECIMAL(10, 3),
-    profit DECIMAL(10, 3),
-    quantity INT,
-    shipping_cost DECIMAL(10, 3),
-
-    product_id BIGINT,
-    customer_id VARCHAR(255),
-    shipping_zipcode INT,
-    order_date DATE,
-    shipment_id VARCHAR(255)
+CREATE SCHEMA IF NOT EXISTS immigration_dwh;
+CREATE TABLE immigration_dwh.country_dim (
+    id INT PRIMARY KEY,
+    country_name VARCHAR(255),
+    country_code CHAR(2),
+    average_temperature DECIMAL(5, 2)
 );
-
-CREATE TABLE IF NOT EXISTS sale_warehouse.product (
-    product_id BIGINT PRIMARY KEY,
-    product_name VARCHAR(255),
-    sku INT,
-    brand VARCHAR(255),
-    category VARCHAR(255),
-    product_size DECIMAL
+CREATE TABLE immigration_dwh.visa_dim (
+    id INT PRIMARY KEY,
+    visa_type VARCHAR(255),
+    visa_issuer VARCHAR(255),
+    visa_category_code CHAR(2),
+    visa_category_name VARCHAR(255)
 );
-
-CREATE TABLE IF NOT EXISTS sale_warehouse.shipment (
-    shipment_id VARCHAR(255) PRIMARY KEY,
-    shipping_mode VARCHAR(255),
-    shipping_status VARCHAR(255),
-    shipping_company VARCHAR(255)
+CREATE TABLE immigration_dwh.us_port_dim (
+    id INT PRIMARY KEY,
+    airport_name VARCHAR(255),
+    airport_type VARCHAR(255),
+    iata_code CHAR(3),
+    municipality VARCHAR(255),
+    region VARCHAR(255),
+    country VARCHAR(255),
+    continent VARCHAR(255),
+    latitude DECIMAL(9, 6),
+    longitude DECIMAL(9, 6),
+    elevation_ft INT
 );
-
-CREATE TABLE IF NOT EXISTS sale_warehouse.customer (
-    customer_id VARCHAR(255) PRIMARY KEY,
-    name VARCHAR(255),
-    phone VARCHAR(255),
-    age INT
+CREATE TABLE immigration_dwh.travel_mode_dim (
+    id INT PRIMARY KEY,
+    mode_code CHAR(2),
+    airline VARCHAR(255),
+    flight_number VARCHAR(255),
+    mode_name VARCHAR(255)
 );
-
-CREATE TABLE IF NOT EXISTS sale_warehouse.location (
-    shipping_zipcode INT PRIMARY KEY,
-    city VARCHAR(45),
-    state VARCHAR(45),
-    country VARCHAR(45),
-    shipping_address VARCHAR(255)
+CREATE TABLE immigration_dwh.us_city_dim (
+    id INT PRIMARY KEY,
+    city_name VARCHAR(255),
+    state VARCHAR(255),
+    median_age DECIMAL(5, 2),
+    male_population INT,
+    female_population INT,
+    veteran_number INT,
+    foreign_born INT,
+    state_code CHAR(2),
+    race VARCHAR(255),
+    count INT
 );
-
-CREATE TABLE IF NOT EXISTS sale_warehouse.time (
-    date_id Date PRIMARY KEY,
+CREATE TABLE immigration_dwh.time_dim (
+    id INT PRIMARY KEY,
     day INT,
     month INT,
     year INT
 );
-
-ALTER TABLE sale_warehouse.sale 
-ADD CONSTRAINT fk_sale_product_prodID FOREIGN KEY (product_id)
-REFERENCES sale_warehouse.product (product_id);
-
-ALTER TABLE sale_warehouse.sale 
-ADD CONSTRAINT fk_sale_customer_custID FOREIGN KEY (customer_id)
-REFERENCES sale_warehouse.customer (customer_id);
-
-ALTER TABLE sale_warehouse.sale 
-ADD CONSTRAINT fk_sale_customer_shipmentID FOREIGN KEY (shipment_id)
-REFERENCES sale_warehouse.shipment (shipment_id);
-
-ALTER TABLE sale_warehouse.sale 
-ADD CONSTRAINT fk_sale_customer_zipcode FOREIGN KEY (shipping_zipcode)
-REFERENCES sale_warehouse.location (shipping_zipcode);
-
-ALTER TABLE sale_warehouse.sale 
-ADD CONSTRAINT fk_sale_customer_timeID FOREIGN KEY (order_date)
-REFERENCES sale_warehouse.time (date_id);
+CREATE TABLE immigration_dwh.immigration (
+    id INT PRIMARY KEY,
+    visa_id INT,
+    us_port_id INT,
+    us_city_id INT,
+    country_id INT,
+    travel_mode_id INT,
+    application_time_id INT,
+    departure_time_id INT,
+    ins_number INT,
+    admission_number INT,
+    applicant_age INT,
+    applicant_birth_year INT,
+    gender VARCHAR(10),
+    occupation VARCHAR(255),
+    residence_country VARCHAR(255),
+    arrival_state VARCHAR(255),
+    status_flag_id INT,
+    FOREIGN KEY (visa_id) REFERENCES immigration_dwh.visa_dim(id),
+    FOREIGN KEY (us_port_id) REFERENCES immigration_dwh.us_port_dim(id),
+    FOREIGN KEY (us_city_id) REFERENCES immigration_dwh.us_city_dim(id),
+    FOREIGN KEY (country_id) REFERENCES immigration_dwh.country_dim(id),
+    FOREIGN KEY (travel_mode_id) REFERENCES immigration_dwh.travel_mode_dim(id),
+    FOREIGN KEY (application_time_id) REFERENCES immigration_dwh.time_dim(id),
+    FOREIGN KEY (departure_time_id) REFERENCES immigration_dwh.time_dim(id)
+);
