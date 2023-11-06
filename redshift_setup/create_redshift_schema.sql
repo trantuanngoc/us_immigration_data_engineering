@@ -45,7 +45,7 @@ CREATE TABLE immigration_dwh.us_city_dim (
     race VARCHAR(255),
     count INT
 );
-CREATE TABLE immigration_dwh.time_dim (
+CREATE TABLE immigration_dwh.date_dim (
     id INT PRIMARY KEY,
     day INT,
     month INT,
@@ -58,8 +58,8 @@ CREATE TABLE immigration_dwh.immigration (
     us_city_id INT,
     country_id INT,
     travel_mode_id INT,
-    application_time_id INT,
-    departure_time_id INT,
+    application_date_id INT,
+    departure_date_id INT,
     ins_number INT,
     admission_number INT,
     applicant_age INT,
@@ -74,6 +74,6 @@ CREATE TABLE immigration_dwh.immigration (
     FOREIGN KEY (us_city_id) REFERENCES immigration_dwh.us_city_dim(id),
     FOREIGN KEY (country_id) REFERENCES immigration_dwh.country_dim(id),
     FOREIGN KEY (travel_mode_id) REFERENCES immigration_dwh.travel_mode_dim(id),
-    FOREIGN KEY (application_time_id) REFERENCES immigration_dwh.time_dim(id),
-    FOREIGN KEY (departure_time_id) REFERENCES immigration_dwh.time_dim(id)
+    FOREIGN KEY (application_date_id) REFERENCES immigration_dwh.date_dim(id),
+    FOREIGN KEY (departure_date_id) REFERENCES immigration_dwh.date_dim(id)
 );
