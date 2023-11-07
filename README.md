@@ -9,8 +9,17 @@ Data is collected from sources:
 - [Airport Code Data:](https://datahub.io/core/airport-codes#data) this dataset is about airport information
 - [World Temperature Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) this dataset is about temperature all over the world, it came from Kaggle
 
+4 data sources correspond to 4 .csv files
+
 ## 2. Scope
-We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. It can help analyse immigration trends at US destination cities and origin of the travelers 
+We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. 
+
+It can help analyse immigration trends at US destination cities and origin of the travelers like:
+- the effects of temperature on the volume of travellers,
+- the seasonality of travel
+- the connection between the volume of travel and the number of entry ports (ie airports)
+- the connection between the volume of travel and the demographics of various cities
+
 ## 3. Tech Stack
  Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
