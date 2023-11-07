@@ -1,39 +1,44 @@
-# Batch Processing : ETL pipeline, data modelling and warehousing of Sales data
+# US-immigration data engineering : ETL pipeline, data modeling and warehousing of US-immigration data 
 
 ## Table of Contents
 1. [Data](#1-data)
 2. [Tech stack](#2-tech-stackk)
 2. [Work flow](#3-work-flow)
 3. [Design](#4-design)
-4. [Result Visualization](#5-result-visualization)
+
 
 
 ## 1. Data
-Data is collected from an e-commerce company about their sales in 2022, the company's analytic teams is interested in understanding their business situation in the last year.
+Data is collected from sources:
 
-Data include 4 csv files : <b> <i> Sales, Products, Shipments, Customers. </i> </b>
+- [US immigration data](https://www.trade.gov/national-travel-and-tourism-office) this dataset about immigrations to US from National Travel and Tourism Office (NTTO) 
+- [US City Demographic Data:](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/) this dataset about  demographics of US cities, came from opensoft
+- [Airport Code Data:](https://datahub.io/core/airport-codes#data) this dataset about airport information
+- [World Temperature Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) this dataset about temperature all over the world, it came from kaggle
 
-## 2. Tech Stack
+## 2. Scope
+We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. It can help analyse immigration trends at US destination cities and origin of the travelers 
+## 3. Tech Stack
  Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
-## 3. Work flow 
+## 4. Work flow 
 <img src = assets/work_flow.png alt = "Airflow conceptual view" width="600">
 
-## 4. Design 
+## 5. Design 
 - Data model (star schema) for data warehouse:
 <img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
 
-<br> <br>
+<!-- <br> <br>
 - Airflow workflow:
-<img src=assets/airflow_workflow.png alt="Star schema" width="600">
+<img src=assets/airflow_workflow.png alt="Star schema" width="600"> -->
  
-## 5. Result visualization
+<!-- ## 5. Result visualization
 - Revenue by month:
 <img src=assets/revenue_by_month.png alt="Revenue by month" width="600">
 
 <br> <br>
 - Brand popularity:
-<img src=assets/brand_popularity.png alt="Brand popularity" width="600">
+<img src=assets/brand_popularity.png alt="Brand popularity" width="600"> -->
   
   
 
