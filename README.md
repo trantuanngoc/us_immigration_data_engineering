@@ -43,7 +43,7 @@ It can help analyse immigration trends at US destination cities and origin of th
 <img src=assets/brand_popularity.png alt="Brand popularity" width="600"> -->
   
 ## 6. Infrastructure
-Using Terraform with aws services:
+Using Terraform to deploy aws services:
 
 - 3 `m5.xlarge` type nodes for AWS EMR cluster.
 - 1 `t2.large` AWS EC2 instance.
