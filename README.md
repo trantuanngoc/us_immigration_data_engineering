@@ -1,30 +1,23 @@
 # US-immigration data engineering : ETL pipeline, data modeling and warehousing of US-immigration data 
 
-## Table of Contents
-1. [Data](#1-data)
-2. [Tech stack](#2-tech-stackk)
-2. [Work flow](#3-work-flow)
-3. [Design](#4-design)
-
-
 
 ## 1. Data
 Data is collected from sources:
 
-- [US immigration data](https://www.trade.gov/national-travel-and-tourism-office) this dataset about immigrations to US from National Travel and Tourism Office (NTTO) 
-- [US City Demographic Data:](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/) this dataset about  demographics of US cities, came from opensoft
-- [Airport Code Data:](https://datahub.io/core/airport-codes#data) this dataset about airport information
-- [World Temperature Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) this dataset about temperature all over the world, it came from kaggle
+- [US immigration data](https://www.trade.gov/national-travel-and-tourism-office) this dataset is about immigrations to US reported by National Travel and Tourism Office (NTTO) 
+- [US City Demographic Data:](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/) this dataset is about  demographics of US cities, came from Opensoft
+- [Airport Code Data:](https://datahub.io/core/airport-codes#data) this dataset is about airport information
+- [World Temperature Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) this dataset is about temperature all over the world, it came from Kaggle
 
 ## 2. Scope
 We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. It can help analyse immigration trends at US destination cities and origin of the travelers 
 ## 3. Tech Stack
  Python, Airflow, Spark, AWS services: S3 (Data Lake), Redshift (data warehouse), EMR (Spark cluster), Terraform, Docker
 
-## 4. Work flow 
-<img src = assets/work_flow.png alt = "Airflow conceptual view" width="600">
+## 4. Architecture 
+<img src = assets/architecture.png alt = "Airflow conceptual view" width="600">
 
-## 5. Design 
+## 5. Data modeling
 - Data model (star schema) for data warehouse:
 <img src=assets/datawarehouse_design.png alt="Star schema" width="600" height="500">
 
