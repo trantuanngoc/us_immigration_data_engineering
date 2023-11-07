@@ -1,4 +1,4 @@
-# US-immigration data engineering : ETL pipeline, data modeling and warehousing of US-immigration data 
+# US immigration data engineering: ETL pipeline, data modeling and warehousing of US immigration data 
 
 
 ## 1. Data
