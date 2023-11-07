@@ -1,4 +1,4 @@
-# US immigration data engineering: auomated end to end ETL pipeline, data modeling and warehousing of US immigration data 
+# US immigration data engineering: automated end to end ETL pipeline, data modeling and warehousing of US immigration data 
 
 
 ## 1. Data
