@@ -1,26 +1,35 @@
-docker-start:
-	docker compose up -d
+# Setup containers to run Airflow
+docker-spin-up:
+	docker compose  --env-file env up airflow-init && docker compose --env-file env up --build -d
 
-docker-airflow-connections:
-	docker exec scheduler sh -c 'airflow connections add --conn-uri '\''postgres://airflow:airflow@postgres:5432/airflow'\'' postgres_sale_db && \
-	airflow connections add --conn-extra '\''{"aws_access_key_id": "******", "aws_secret_access_key": "******", "region": "ap-southeast-1"}'\'' --conn-type aws aws && \
-	airflow connections add --conn-uri '\''postgres://fancol:fancol2356@fancol-redshift-cluster.c3otdg01elsn.ap-southeast-1.redshift.amazonaws.com:5439/redshift_main_db'\'' redshift'
+perms:
+	mkdir -p logs plugins temp && sudo chmod -R u=rwx,g=rwx,o=rwx logs plugins temp dags 
 
-# Start docker compose
-up: docker-start 
+up: perms docker-spin-up
 
-# Add connections to airflow
-connections: docker-airflow-connections
+down:
+	docker compose down
+
+sh:
+	docker exec -ti webserver bash
 
 # Set up cloud infrastructure
-infra-init: 
+tf-init:
 	terraform -chdir=./terraform init
 
-infra-plan: 
-	terraform -chdir=./terraform plan
+infra-up:
+	terraform -chdir=./terraform apply
 
-infra-up: 
-	terraform -chdir=./terraform apply --auto-approve
+infra-down:
+	terraform -chdir=./terraform destroy
 
-infra-down: 
-	terraform -chdir=./terraform destroy --auto-approve
+infra-config:
+	terraform -chdir=./terraform output
+
+# Create tables in Warehouse
+migration:
+	./spectrum_migrate.sh
+
+# Helpers
+ssh-ec2:
+	terraform -chdir=./terraform output -raw private_key > private_key.pem && chmod 600 private_key.pem && ssh -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -i private_key.pem ubuntu@$$(terraform -chdir=./terraform output -raw ec2_public_dns) && rm private_key.pem

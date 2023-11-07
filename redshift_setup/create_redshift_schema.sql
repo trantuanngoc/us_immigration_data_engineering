@@ -35,7 +35,7 @@ CREATE TABLE immigration_dwh.travel_mode_dim (
 CREATE TABLE immigration_dwh.us_city_dim (
     id INT PRIMARY KEY,
     city_name VARCHAR(255),
-    state VARCHAR(255),
+    state_name VARCHAR(255),
     median_age DECIMAL(5, 2),
     male_population INT,
     female_population INT,
