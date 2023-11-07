@@ -2,7 +2,7 @@
 
 
 ## 1. Data
-Data is collected from sources:
+Data is collected from multiple sources:
 
 - [US immigration data](https://www.trade.gov/national-travel-and-tourism-office) this dataset is about immigrations to US reported by National Travel and Tourism Office (NTTO) 
 - [US City Demographic Data:](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/) this dataset is about  demographics of US cities, came from Opensoft
