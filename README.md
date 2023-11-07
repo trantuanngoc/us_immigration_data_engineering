@@ -9,7 +9,7 @@ Data is collected from sources:
 - [Airport Code Data:](https://datahub.io/core/airport-codes#data) this dataset is about airport information
 - [World Temperature Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) this dataset is about temperature all over the world, it came from Kaggle
 
-4 data sources correspond to 4 .csv files
+4 data sources correspond to 4 `.csv` files
 
 ## 2. Scope
 We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. 
@@ -42,7 +42,16 @@ It can help analyse immigration trends at US destination cities and origin of th
 - Brand popularity:
 <img src=assets/brand_popularity.png alt="Brand popularity" width="600"> -->
   
-  
+## 6. Infrastructure
+Using Terraform with aws services:
+
+- 3 `m5.xlarge` type nodes for AWS EMR cluster.
+- 1 `t2.large` AWS EC2 instance.
+- 1 `iam role` to allow Redshift access to S3.
+- 1 `dc2.large` type node for AWS Redshift cluster.
+- 1 S3 bucket 
+
+
 
 
 

@@ -68,12 +68,5 @@ CREATE TABLE immigration_dwh.immigration (
     occupation VARCHAR(255),
     residence_country VARCHAR(255),
     arrival_state VARCHAR(255),
-    status_flag_id INT,
-    FOREIGN KEY (visa_id) REFERENCES immigration_dwh.visa_dim(id),
-    FOREIGN KEY (us_port_id) REFERENCES immigration_dwh.us_port_dim(id),
-    FOREIGN KEY (us_city_id) REFERENCES immigration_dwh.us_city_dim(id),
-    FOREIGN KEY (country_id) REFERENCES immigration_dwh.country_dim(id),
-    FOREIGN KEY (travel_mode_id) REFERENCES immigration_dwh.travel_mode_dim(id),
-    FOREIGN KEY (application_date_id) REFERENCES immigration_dwh.date_dim(id),
-    FOREIGN KEY (departure_date_id) REFERENCES immigration_dwh.date_dim(id)
+    status_flag_id INT
 );
