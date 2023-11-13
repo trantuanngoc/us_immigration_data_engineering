@@ -12,9 +12,9 @@ Data is collected from multiple sources:
 4 data sources correspond to 4 `.csv` files
 
 ## 2. Scope
-We design and implement an automated end to end data pipeline on cloud to combine  data from multiple sources. 
+Build an automated end to end data pipeline on cloud to combine  data from multiple sources and transform into data lake and data warehouse. 
 
-It can help analyse immigration trends at US destination cities and origin of the travelers like:
+Data warehouse can help analyse immigration trends at US destination cities and origin of the travelers like:
 - the connection between the volume of travel and the number of entry ports 
 - the connection between the volume of travel and the demographics of various cities
 - the effect of temperature of immigration country on the volume of travelers
