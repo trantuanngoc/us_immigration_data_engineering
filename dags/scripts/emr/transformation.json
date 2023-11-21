@@ -1,0 +1,40 @@
+{
+"transformations": [
+    {
+    "input": "immigration.csv",
+    "output": "immigration",
+    "table_name": "immigration_table",
+    "sql_file": "spark_sql/transform_visa_dim.sql"
+    },
+    {
+    "input": "airport.csv",
+    "output": "airport",
+    "table_name": "airport_table",
+    "sql_file": "spark_sql/transform_us_port_dim.sql"
+    },
+    {
+    "input": "demographic.csv",
+    "output": "demographic",
+    "table_name": "demographic_table",
+    "sql_file": "spark_sql/transform_us_city_dim.sql"
+    },
+    {
+    "input": "immigration.csv",
+    "output": "immigration",
+    "table_name": "immigration_table",
+    "sql_file": "spark_sql/transform_travel_mode_dim.sql"
+    },
+    {
+    "input": "immigration.csv",
+    "output": "immigration",
+    "table_name": "immigration_table",
+    "sql_file": "spark_sql/transform_date_dim.sql"
+    },
+    {
+    "input": "temperature.csv",
+    "output": "temperature",
+    "table_name": "temp_table",
+    "sql_file": "spark_sql/transform_country_dim.sql"
+    }
+]
+}

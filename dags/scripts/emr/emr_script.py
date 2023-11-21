@@ -1,7 +1,7 @@
 import argparse
 from pyspark.sql import SparkSession
 from Transformer import Transformer
-
+import json
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -14,11 +14,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
     spark = SparkSession.builder.appName("run emr").getOrCreate()
     transformer = Transformer(spark)
-    transformer.transform(f"{args.input}/immigration.csv", f"{args.output}/immigration", "immigration_table", "spark_sql/transform_visa_dim.sql")
-    transformer.transform(f"{args.input}/airport.csv", f"{args.output}/airport", "airport_table", "spark_sql/transform_us_port_dim.sql")
-    transformer.transform(f"{args.input}/demographic.csv", f"{args.output}/demographic", "demographic_table", "spark_sql/transform_us_city_dim.sql")
-    transformer.transform(f"{args.input}/immigration.csv", f"{args.output}/immigration", "immigration_table", "spark_sql/transform_travel_mode_dim.sql")
-    transformer.transform(f"{args.input}/immigration.csv", f"{args.output}/immigration", "immigration_table", "spark_sql/transform_date_dim.sql")
-    transformer.transform(f"{args.input}/temperature.csv", f"{args.output}/temperature", "temp_table", "spark_sql/transform_country_dim.sql")
 
-    
+    with open('transformations.json', 'r') as json_file:
+        transformations_data = json.load(json_file)
+
+    for transformation in transformations_data["transformations"]:
+        transformer.transform(f"{args.input}/immigration.csv", f"{args.output}/immigration.csv", 
+            transformation['table_name'], transformation['sql_file'])
