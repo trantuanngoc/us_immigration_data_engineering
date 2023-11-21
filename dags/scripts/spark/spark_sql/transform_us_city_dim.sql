@@ -1,11 +1,11 @@
 SELECT 
-    ROW_NUMBER() OVER (ORDER BY `State Code`) AS id
-    `State Code` AS state_name,
-    SUM(`Total Population`) AS total_population,
-    SUM(`Male Population`) AS male_population,
-    SUM(`Female Population`) AS female_population,
-    SUM(`Number of Veterans`) AS number_of_veterans,
-    SUM(`Foreign-born`) AS foreign_born,
-    AVG(`Median Age`) AS median_age,
-    AVG(`Average Household Size`) AS average_household_size
+    ROW_NUMBER() OVER (ORDER BY State Code) AS id
+    State_Code AS state_name,
+    SUM(Total_Population) AS total_population,
+    SUM(Male_Population) AS male_population,
+    SUM(Female_Population) AS female_population,
+    SUM(Number_of_Veterans) AS number_of_veterans,
+    SUM(Foreign_born) AS foreign_born,
+    AVG(Median_Age) AS median_age,
+    AVG(Average_Household_Size) AS average_household_size
 FROM demographic_table;

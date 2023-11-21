@@ -1,42 +1,42 @@
 {
 "fields": [
     {
-    "name": "State Code",
+    "name": "State_Code",
     "type": "string",
     "nullable": false
     },
     {
-    "name": "Total Population",
+    "name": "Total_Population",
     "type": "long",
     "nullable": false
     },
     {
-    "name": "Male Population",
+    "name": "Male_Population",
     "type": "long",
     "nullable": false
     },
     {
-    "name": "Female Population",
+    "name": "Female_Population",
     "type": "long",
     "nullable": false
     },
     {
-    "name": "Number of Veterans",
+    "name": "Number_of_Veterans",
     "type": "long",
     "nullable": false
     },
     {
-    "name": "Foreign-born",
+    "name": "Foreign_born",
     "type": "long",
     "nullable": false
     },
     {
-    "name": "Median Age",
+    "name": "Median_Age",
     "type": "float",
     "nullable": false
     },
     {
-    "name": "Average Household Size",
+    "name": "Average_Household_Size",
     "type": "float",
     "nullable": false
     }
