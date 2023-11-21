@@ -1,6 +1,6 @@
 import argparse
 from pyspark.sql import SparkSession
-from Transformer import Transformer
+from spark.spark_code.Transformer import Transformer
 import json
 
 if __name__ == "__main__":
