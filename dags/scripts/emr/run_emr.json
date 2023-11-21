@@ -8,7 +8,7 @@
                 "--deploy-mode", "cluster",
                 "--py-files",
                 "data_transformation.zip",
-                "s3://{{ params.BUCKET_NAME }}/scripts/emr_script.py",
+                "s3://{{ params.BUCKET_NAME }}/scripts/EmrScript.py",
                 "--input", "s3://{{ params.BUCKET_NAME }}/{{ params.work}}/{{ ds }}/",
                 "--output", "s3://{{ params.BUCKET_NAME }}/{{ params.production}/{{ ds }}/"
             ],
