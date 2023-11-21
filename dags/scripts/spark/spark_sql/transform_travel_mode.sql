@@ -9,5 +9,4 @@ SELECT
         WHEN i94mode = 3 THEN 'Land'
         ELSE 'Other'
     END AS mode_name
-FROM immigration_table
-GROUP BY i94mode, airline, fltno;    
+FROM immigration_table; 

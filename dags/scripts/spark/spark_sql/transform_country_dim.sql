@@ -3,6 +3,4 @@ SELECT
     Country AS country,
     CountryCode as country_code
     AVG(AverageTemperature) AS average_temperature
-FROM temp_table
-WHERE AverageTemperature IS NOT NULL
-GROUP BY Country;
+FROM temp_table;
