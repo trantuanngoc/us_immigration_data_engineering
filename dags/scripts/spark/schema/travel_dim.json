@@ -1,0 +1,30 @@
+{
+"fields": [
+    {
+    "name": "id",
+    "type": "integer",
+    "nullable": false
+    },
+    {
+    "name": "i94mode",
+    "type": "integer",
+    "nullable": false
+    },
+    {
+    "name": "airline",
+    "type": "string",
+    "nullable": false
+    },
+    {
+    "name": "fltno",
+    "type": "string",
+    "nullable": false
+    },
+    {
+    "name": "mode_name",
+    "type": "string",
+    "nullable": false
+    }
+]
+  }
+  

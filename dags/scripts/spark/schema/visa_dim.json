@@ -1,0 +1,20 @@
+{
+"fields": [
+    {
+    "name": "visatype",
+    "type": "string",
+    "nullable": false
+    },
+    {
+    "name": "visapost",
+    "type": "string",
+    "nullable": false
+    },
+    {
+    "name": "i94visa",
+    "type": "integer",
+    "nullable": false
+    }
+]
+}
+  

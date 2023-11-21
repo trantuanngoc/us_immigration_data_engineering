@@ -1,0 +1,39 @@
+{
+  "fields": [
+    {
+      "name": "ident",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "iata_code",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "local_code",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "elevation_ft",
+      "type": "float",
+      "nullable": false
+    },
+    {
+      "name": "coordinates",
+      "type": "string",
+      "nullable": false
+    }
+  ]
+}

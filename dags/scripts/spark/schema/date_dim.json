@@ -1,0 +1,10 @@
+{
+"fields": [
+    {
+    "name": "date",
+    "type": "date",
+    "nullable": false
+    }
+]
+}
+  

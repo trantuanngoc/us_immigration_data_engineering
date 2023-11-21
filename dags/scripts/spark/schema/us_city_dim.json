@@ -1,0 +1,44 @@
+{
+"fields": [
+    {
+    "name": "State Code",
+    "type": "string",
+    "nullable": false
+    },
+    {
+    "name": "Total Population",
+    "type": "long",
+    "nullable": false
+    },
+    {
+    "name": "Male Population",
+    "type": "long",
+    "nullable": false
+    },
+    {
+    "name": "Female Population",
+    "type": "long",
+    "nullable": false
+    },
+    {
+    "name": "Number of Veterans",
+    "type": "long",
+    "nullable": false
+    },
+    {
+    "name": "Foreign-born",
+    "type": "long",
+    "nullable": false
+    },
+    {
+    "name": "Median Age",
+    "type": "float",
+    "nullable": false
+    },
+    {
+    "name": "Average Household Size",
+    "type": "float",
+    "nullable": false
+    }
+]
+}

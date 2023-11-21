@@ -1,0 +1,24 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "integer",
+      "nullable": false
+    },
+    {
+      "name": "Country",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "CountryCode",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "AverageTemperature",
+      "type": "float",
+      "nullable": false
+    }
+  ]
+}
