@@ -47,7 +47,6 @@ Using Terraform to deploy aws services:
 
 - 3 `m5.xlarge` type nodes for AWS EMR cluster.
 - 1 `t2.large` AWS EC2 instance.
-- 1 `iam role` to allow Redshift access to S3.
 - 1 `dc2.large` type node for AWS Redshift cluster.
 - 1 S3 bucket 
 
